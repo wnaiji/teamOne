@@ -60,4 +60,10 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
-          args: set image deployment/${{ needs.get-repo-name.outputs.repo_name }}-deployment ${{ needs.get-repo-name.outputs.repo_name }}="ghcr.io/code4sud/${{ needs.get-repo-name.outputs.repo_name }}:dev-${{ needs.get-repo-name.outputs.timestamp }}" -n ia4sud
+          args: PROJECT_NAME=${{ needs.get-repo-name.outputs.repo_name }} IMAGE="ghcr.io/code4sud/${{ needs.get-repo-name.outputs.repo_name }}:dev-${{ needs.get-repo-name.outputs.timestamp }}" envsubst < deployment.yaml | kubectl apply -n ia4sud -f -
+
+      # - uses: actions-hub/kubectl@master
+      #   env:
+      #     KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+      #   with:
+      #     args: set image deployment/${{ needs.get-repo-name.outputs.repo_name }}-deployment ${{ needs.get-repo-name.outputs.repo_name }}="ghcr.io/code4sud/${{ needs.get-repo-name.outputs.repo_name }}:dev-${{ needs.get-repo-name.outputs.timestamp }}" -n ia4sud
