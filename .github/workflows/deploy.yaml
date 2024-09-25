@@ -67,9 +67,17 @@ jobs:
           mkdir -p $HOME/.kube
           echo "${{ secrets.KUBECONFIG }}" | base64 -d > $HOME/.kube/config
           chmod 600 $HOME/.kube/config
-      - name: Deploy to kubernetes
+      - name: Deployment to kubernetes
         run: |
           PROJECT_NAME=${{ needs.get-repo-name.outputs.repo_name }} IMAGE="ghcr.io/code4sud/${{ needs.get-repo-name.outputs.repo_name }}:dev-${{ needs.get-repo-name.outputs.timestamp }}" envsubst < ./kube/deployment.yaml | kubectl apply -n ia4sud -f -
+
+      - name: Service to kubernetes
+        run: |
+          PROJECT_NAME=${{ needs.get-repo-name.outputs.repo_name }} envsubst < ./kube/service.yaml | kubectl apply -n ia4sud -f -
+
+      - name: Ingress to kubernetes
+        run: |
+          PROJECT_NAME=${{ needs.get-repo-name.outputs.repo_name }} envsubst < ./kube/ingress.yaml | kubectl apply -n ia4sud -f -
 
       # - uses: actions-hub/kubectl@master
       #   env:
