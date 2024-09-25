@@ -8,7 +8,7 @@ spec:
   tls:
     - hosts:
         - $PROJECT_NAME.ia4sud.fr
-      secretName: ia4sud-sec
+      secretName: $PROJECT_NAME-sec
   rules:
     - host: $PROJECT_NAME.ia4sud.fr
       http:
