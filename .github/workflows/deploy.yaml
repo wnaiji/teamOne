@@ -56,11 +56,19 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - uses: actions-hub/kubectl@master
-        env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
         with:
-          args: PROJECT_NAME=${{ needs.get-repo-name.outputs.repo_name }} IMAGE="ghcr.io/code4sud/${{ needs.get-repo-name.outputs.repo_name }}:dev-${{ needs.get-repo-name.outputs.timestamp }}" envsubst < deployment.yaml | kubectl apply -n ia4sud -f -
+          version: "latest"
+
+      # Step 3: Configure kubeconfig from secrets
+      - name: Set up kubeconfig
+        run: |
+          echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+          chmod 600 $HOME/.kube/config
+      - name: Deploy to kubernetes
+        run: |
+          PROJECT_NAME=${{ needs.get-repo-name.outputs.repo_name }} IMAGE="ghcr.io/code4sud/${{ needs.get-repo-name.outputs.repo_name }}:dev-${{ needs.get-repo-name.outputs.timestamp }}" envsubst < deployment.yaml | kubectl apply -n ia4sud -f -
 
       # - uses: actions-hub/kubectl@master
       #   env:
