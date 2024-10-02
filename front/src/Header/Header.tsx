@@ -73,27 +73,27 @@ export default function Header() {
         {
             id: 1,
             label: 'Accueil',
-            href: '/'
+            href: 'https://ia4sud.fr/'
         },
         {
             id: 2,
             label: 'Les vainqueurs du Hackathon',
-            href: '/#winners'
+            href: 'https://ia4sud.fr/#winners'
         },
         {
             id: isEventFinished ? 3 : 2,
             label: 'Les sujets abordés',
-            href: '/#subjects'
+            href: 'https://ia4sud.fr/#subjects'
         },
         {
             id: isEventFinished ? 4 : 3,
             label: 'Réalisations',
-            href: '/#teams'
+            href: 'https://ia4sud.fr/#teams'
         },
         {
             id: isEventFinished ? 5 : 4,
             label: 'À propos',
-            href: '/#about'
+            href: 'https://ia4sud.fr/#about'
         }
 
     ]
@@ -101,7 +101,7 @@ export default function Header() {
     const menuItemsWithoutWinners = menuItems.filter((item) => item.label !== 'Les vainqueurs du Hackathon')
     return (
         <nav className='container-header flex justify-between w-full'>
-            <a href='/' className='cursor-pointer w-1/7 logo-header '>
+            <a href='https://ia4sud.fr/' className='cursor-pointer w-1/7 logo-header '>
             <img src={ia4SudLogo} alt="code4sud logo" className='w-full self-start ' />
             </a>
             <div>
