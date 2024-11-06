@@ -1,43 +1,43 @@
+# Build frontend
 FROM node:22-alpine AS builder-front
 
 WORKDIR /app
 
-COPY ./front/package.json .
+#COPY ./front/package-lock.json .
+#COPY ./front/package.json .
+COPY ./front .
 
 RUN npm install
 
-COPY ./front .
 
 RUN npm run build
 
-FROM node:22-alpine
+CMD ["npm", "run", "start"]
+
+# Backend server
+FROM node:22-alpine AS server-back
 
 WORKDIR /app
 
 COPY ./back/package.json .
+COPY ./back .
 
 RUN npm install
 
-COPY ./back .
 
+ENV ADDRESS=0.0.0.0 PORT=8000
 
-EXPOSE 80
-
-COPY --from=builder-front /app/dist /app/public
-
-
-ENV ADDRESS=0.0.0.0 PORT=80
-
+# Serveur backend à partir du port 80
 CMD ["npm", "start"]
 
+# Serve frontend using Nginx
+FROM nginx:1.27-alpine
 
-# FROM nginx:1.27-alpine
+WORKDIR /root/
 
-# WORKDIR /root/
+COPY ./docker/nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder-front /app/dist /usr/share/nginx/html
 
-# COPY ./docker/nginx.conf /etc/nginx/nginx.conf
-# COPY --from=builder-front /app/dist /usr/share/nginx/html
+EXPOSE 8000
 
-# EXPOSE 80
-
-# CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]

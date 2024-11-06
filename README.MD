@@ -8,6 +8,7 @@ Pour commencer, suivez les étapes ci-dessous :
 ```bash
 cd back
 npm install
+npm install axios body-parser
 npm start
 ```
 2. Installer les dépendances et démarrer le serveur frontend
