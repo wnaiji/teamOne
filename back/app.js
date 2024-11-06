@@ -1,5 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
+var axios = require('axios');
+var bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -7,20 +9,16 @@ var logger = require('morgan');
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('db.sql');
 
+// Créer la table "users" si elle n'existe pas
 db.serialize(() => {
-
-  db.run("CREATE TABLE IF NOT EXISTS lorem (info TEXT)");
-
-  // const stmt = db.prepare("INSERT INTO lorem VALUES (?)");
-  // for (let i = 0; i < 10; i++) {
-  //   stmt.run("Ipsum " + i);
-  // }
-  // stmt.finalize();
-
-  db.each("SELECT rowid AS id, info FROM lorem", (err, row) => {
-    // console.log(row.id + ": " + row.info);
-  });
+  db.run(`CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    userName TEXT NOT NULL,
+    age INTEGER NOT NULL,
+    localisation TEXT NOT NULL
+  )`);
 });
+
 
 db.close();
 
