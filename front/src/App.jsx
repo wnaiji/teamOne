@@ -4,27 +4,34 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div class="d-flex h-5/6 w-full z-20">
-        <h1 class="text-black">TITRE</h1>
+      <div class="flex w-full z-20 h-screen">
+        <h1 class="text-black m-auto">TITRE</h1>
       </div>
-      <div class="class d-flex h-screen w-full">
-        <ul>
-          <li>
-            <div class="d-flex h-1/2 w-full bg-green-800"></div>
+
+      <div class="h-screen w-screen">
+      <ul class="flex text-black justify-evenly h-3/6 w-full">
+        <li class="w-2/5 h-2/5 bg-green-500 "></li>
+        <li class="w-2/5 h-2/5 bg-green-500"></li>
+      </ul>
+      </div>
+        {/* <div className="flex flex-col h-screen w-full">
+        <ul className="flex flex-col w-full">
+          <li className="flex h-1/2 w-full">
+            <div className="flex h-full w-full bg-green-800"></div>
           </li>
-          <li>
-            <div class="d-flex h-1/2 w-full bg-green-800">
-              <button></button>
+          <li className="flex h-1/2 w-full">
+            <div className="flex h-full w-full bg-green-800 items-center justify-center">
+              <button>Button</button>
             </div>
           </li>
         </ul>
-      </div>
+      </div> */}
     </>
-  )
+  );
 }
 
 export default App
