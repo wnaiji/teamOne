@@ -28,11 +28,14 @@ async function fetchRisks(latlon, rayon) {
                 'Cache-Control': 'no-cache'
             }
         });
+        // console.log('Response', response.data);
         response.data.data.forEach((risque, index) => {
             console.log(`Risque #${index + 1}:`);
             console.log('Commune:', risque.libelle_commune);
             console.log('Code INSEE:', risque.code_insee);
             console.log('Détails du risque:', risque.risques_detail);
+            // const libelles = risque.map(risque => risque.libelle_risque_long);
+            // console.log('Risques:', libelles);
         });
     } catch (error) {
         console.error('Erreur lors de la requête:', error);

@@ -8,14 +8,19 @@
         "build": "vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "start": "vite --port 8000"
+        "start": "vite"
     },
     "dependencies": {
         "@vitejs/plugin-react": "^4.3.3",
+        "axios": "^1.7.7",
+        "cors": "^2.8.5",
+        "gsap": "^3.12.5",
         "lucide-react": "^0.454.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "react-leaflet": "^4.2.1",
         "react-modern-drawer": "^1.4.0",
+        "react-router-dom": "^6.28.0",
         "react-scripts": "^3.0.1",
         "tailwind-merge": "^2.5.2",
         "tailwindcss-animate": "^1.0.7",
