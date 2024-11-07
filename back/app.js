@@ -1,28 +1,11 @@
 var createError = require('http-errors');
 var express = require('express');
+var axios = require('axios');
+var bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('db.sql');
-
-db.serialize(() => {
-
-  db.run("CREATE TABLE IF NOT EXISTS lorem (info TEXT)");
-
-  // const stmt = db.prepare("INSERT INTO lorem VALUES (?)");
-  // for (let i = 0; i < 10; i++) {
-  //   stmt.run("Ipsum " + i);
-  // }
-  // stmt.finalize();
-
-  db.each("SELECT rowid AS id, info FROM lorem", (err, row) => {
-    // console.log(row.id + ": " + row.info);
-  });
-});
-
-db.close();
+var authRouter = require('./routes/auth');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -40,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
