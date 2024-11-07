@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 
 function App() {
@@ -7,27 +7,39 @@ function App() {
   return (
     <>
       <div class="flex w-full z-20 h-screen">
-        <h1 class="text-black m-auto">TITRE</h1>
+        <h1 class="text-3xl text-indigo-600 font-bold text-center m-auto">RiskyQuest</h1>
       </div>
-      <div class="h-screen w-screen">
-        <ul class="flex text-black justify-evenly h-3/6 w-full border-radus">
-          <li class="w-2/5 h-2/5 bg-green-500"><button type="button">OPT1</button></li>
-          <li class="w-2/5 h-2/5 bg-green-500"><button type="button">OPT2</button></li>
-        </ul>
+      <h2 class = "text-black text-center">Fonctionnalités</h2>
+      <div className="grid grid-cols-2 gap-2 mb-8">
+        <div className="bg-violet-100 w-full h-12 rounded-lg flex items-center justify-center text-indigo-700">Feature 1</div>
+        <div className="bg-violet-100 w-full h-12 rounded-lg flex items-center justify-center text-indigo-700">Feature 2</div>
+        <div className="bg-violet-100 w-full h-12 rounded-lg flex items-center justify-center text-indigo-700">Feature 3</div>
+        <div className="bg-violet-100 w-full h-12 rounded-lg flex items-center justify-center text-indigo-700">Feature 4</div>
       </div>
-      <div class="h-screen w-screen">
-        <ul class="flex text-black justify-evenly h-3/6 w-full">
-          <li class="w-2/5 h-2/5 bg-green-500">
-            <a href="/map">
-              <button type="button">Age</button>
-            </a>
-          </li>
-          <li class="w-2/5 h-2/5 bg-green-500">
-            <a href="/login">
-              <button type="button">Login</button>
-            </a>
-          </li>
-        </ul>
+        {/* Description Text */}
+      <div className="text-gray-700 text-center mb-4 description-text">
+        RiskyQuest est un outil interactif conçu pour vous aider à apprendre à gérer des risques face aux situations réelles de manière ludique!
+      </div>
+      
+      {/* Image Placeholder */}
+      <div className="bg-gray-300 w-full h-32 rounded-lg mb-4 flex items-center justify-center text-gray-500 image-placeholder">
+        Image
+      </div>
+      
+      {/* Presentation Text */}
+      <div className="text-center text-sm text-indigo-600 font-semibold mb-4 presentation-text">
+        Utilisez RiskyQuest pour éduquer dès le jeune âge vos enfants.
+      </div>
+      <div className="flex flex-col gap-4 mt-4">
+        <button className="bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg w-full">
+          Tester la solution
+        </button>
+        <button className="bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg w-full">
+          Se connecter
+        </button>
+        <button className="bg-gray-400 text-white font-bold py-2 px-4 rounded-lg w-full">
+          Sans connection
+        </button>
       </div>
     </>
   );
