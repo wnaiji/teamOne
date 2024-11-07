@@ -1,32 +1,52 @@
-## Starter React Express Sqlite
+#Projet Code4Sud - TeamOne
 
-Ce projet utilise Express.js pour le backend, React pour le frontend et SQLite pour la base de données.
+Bienvenue sur Nom du Projet ! Ce projet est composé d'un frontend et d'un backend, tous deux containerisés à l'aide de Docker et orchestrés avec Docker Compose. Le frontend est une application React servie par Nginx, tandis que le backend est un serveur Node.js utilisant SQLite3 pour le stockage des données.
 
-Pour commencer, suivez les étapes ci-dessous :
+#Structure du Projet
+project-root/
+│
+├── docker-compose.yml        # Orchestration des services Docker
+├── front/                    # Code source du frontend (React)
+│   ├── Dockerfile            # Dockerfile pour construire le frontend
+│	├── nginx.conf            # Configuration Nginx pour le frontend
+│   ├── package.json          # Dépendances du frontend
+│   ├── ... autres fichiers
+│
+└── back/                     # Code source du backend (Node.js)
+	├── Dockerfile            # Dockerfile pour construire le backend
+	├── package.json          # Dépendances du backend
+	├── ... autres fichiers
 
-1. Installer les dépendances et démarrer le serveur backend
-```bash
-cd back
-npm install
-npm install axios body-parser
-npm start
-```
-2. Installer les dépendances et démarrer le serveur frontend
-```bash
-cd front
-npm install
-npm start
-```
+#Technologies Utilisées
+- Frontend : React, servi avec Nginx
+- Backend : Node.js (Express), SQLite3 pour la persistance des données
+- Docker : Containerisation du frontend et du backend
+- Docker Compose : Pour gérer les applications multi-conteneurs
 
-3. Accéder à l'application via le navigateur
-```bash
-http://localhost:3000
-```
+#Commencer
 
-## Structure du projet
+Prérequis
+Docker installé. Télécharger Docker ici.
+Docker Compose installé. Docker Desktop inclut déjà Docker Compose.
+Node.js et npm pour le développement et les tests locaux.
 
-Il est important de respecter la structure pour le deploiement de votre projet.
-Pour vous assurer que tout fonctionnera correctement pour le deploiement, vous pouvez executez le script test.sh qui va build l'image docker et la lancer, cela vous permettra de verifier que tout fonctionne correctement.
-```bash
-bash ./test.sh
-```
+Installation
+
+1 - Cloner le Répertoire
+	git clone https://github.com/wnaiji/teamOne.git
+	cd teamOne
+
+Exécution du Projet
+Le projet est containerisé avec Docker, vous pouvez donc facilement exécuter à la fois le frontend et le backend en utilisant Docker Compose.
+
+1 - Construire et Démarrer les Conteneurs
+	docker compose up --build
+	Cette commande va :
+		Construire les images Docker pour le frontend et le backend.
+		Démarrer les deux conteneurs en mode détaché.
+2 - Accéder aux Services
+	- Frontend : http//localhost:80
+	- Backend : http//localhost:8000
+3 - Arrêter les Conteneurs
+	Pour arrêter les services, exécutez :
+	docker compose down

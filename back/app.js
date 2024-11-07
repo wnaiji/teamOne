@@ -1,31 +1,10 @@
-//var createError = require('http-errors');
-function createError(status, message) {
-  const error = new Error(message || 'Internal Server Error');
-  error.status = status || 500;
-  return error;
-}
+var createError = require('http-errors');
 var express = require('express');
 var axios = require('axios');
 var bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('db.sql');
-
-// Créer la table "users" si elle n'existe pas
-db.serialize(() => {
-  db.run(`CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    userName TEXT NOT NULL,
-    age INTEGER NOT NULL,
-    localisation TEXT NOT NULL
-  )`);
-});
-
-
-db.close();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
