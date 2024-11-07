@@ -1,48 +1,89 @@
-import { useState, useRef } from 'react'
-import './App.css'
+// src/App.jsx
+import { useState } from 'react';
+import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div class="flex w-full z-20 h-screen">
-        <h1 class="text-3xl text-indigo-600 font-bold text-center m-auto">RiskyQuest</h1>
+    <div className="flex flex-col items-center bg-indigo-50 min-h-screen text-gray-800">
+      {/* Main Title */}
+      <div className="flex w-full h-20 bg-white shadow-md justify-center items-center">
+        <h1 className="text-3xl font-bold text-indigo-600">RiskyQuest</h1>
       </div>
-      <h2 class = "text-black text-center">Fonctionnalités</h2>
-      <div className="grid grid-cols-2 gap-2 mb-8">
-        <div className="bg-violet-100 w-full h-12 rounded-lg flex items-center justify-center text-indigo-700">Feature 1</div>
-        <div className="bg-violet-100 w-full h-12 rounded-lg flex items-center justify-center text-indigo-700">Feature 2</div>
-        <div className="bg-violet-100 w-full h-12 rounded-lg flex items-center justify-center text-indigo-700">Feature 3</div>
-        <div className="bg-violet-100 w-full h-12 rounded-lg flex items-center justify-center text-indigo-700">Feature 4</div>
+
+      {/* Features Section */}
+      <div className="w-full max-w-4xl p-6">
+        <h2 className="text-center text-2xl font-semibold text-black my-6">Fonctionnalités</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+          <div className="bg-indigo-50 rounded-xl overflow-hidden flex flex-col shadow-lg">
+            <img src="path/to/image1.png" alt="Liste des risques" className="w-full h-32 object-cover rounded-t-xl" />
+            <div className="bg-indigo-300 w-full text-center py-3 text-white font-semibold">
+              Liste des risques
+            </div>
+          </div>
+
+          <div className="bg-indigo-50 rounded-xl overflow-hidden flex flex-col shadow-lg">
+            <img src="path/to/image2.png" alt="Guide des gestes" className="w-full h-32 object-cover rounded-t-xl" />
+            <div className="bg-indigo-300 w-full text-center py-3 text-white font-semibold">
+              Guide des gestes
+            </div>
+          </div>
+
+          <div className="bg-indigo-50 rounded-xl overflow-hidden flex flex-col shadow-lg">
+            <img src="path/to/image3.png" alt="Qui est impacté ?" className="w-full h-32 object-cover rounded-t-xl" />
+            <div className="bg-indigo-300 w-full text-center py-3 text-white font-semibold">
+              Qui est impacté ?
+            </div>
+          </div>
+
+          <div className="bg-indigo-50 rounded-xl overflow-hidden flex flex-col shadow-lg">
+            <img src="path/to/image4.png" alt="Placeholder" className="w-full h-32 object-cover rounded-t-xl" />
+            <div className="bg-indigo-300 w-full text-center py-3 text-white font-semibold">
+              Placeholder
+            </div>
+          </div>
+        </div>
       </div>
-        {/* Description Text */}
-      <div className="text-gray-700 text-center mb-4 description-text">
+
+      {/* Description Text */}
+      <div className="text-gray-700 text-center max-w-2xl mb-6 px-6">
         RiskyQuest est un outil interactif conçu pour vous aider à apprendre à gérer des risques face aux situations réelles de manière ludique!
       </div>
-      
+
       {/* Image Placeholder */}
-      <div className="bg-gray-300 w-full h-32 rounded-lg mb-4 flex items-center justify-center text-gray-500 image-placeholder">
-        Image
+      <div className="bg-gray-300 w-full max-w-4xl h-40 rounded-lg flex items-center justify-center text-gray-500 mb-6">
+        Image Placeholder
       </div>
-      
+
       {/* Presentation Text */}
-      <div className="text-center text-sm text-indigo-600 font-semibold mb-4 presentation-text">
+      <div className="text-center text-sm text-indigo-600 font-semibold mb-4">
         Utilisez RiskyQuest pour éduquer dès le jeune âge vos enfants.
       </div>
-      <div className="flex flex-col gap-4 mt-4">
-        <button className="bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg w-full">
+
+      {/* Call to Action Buttons */}
+      <div className="flex flex-col items-center gap-4 w-full max-w-md">
+        <button className="bg-indigo-500 text-white font-bold py-3 px-4 rounded-full w-full hover:bg-indigo-600 transition">
           Tester la solution
         </button>
-        <button className="bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg w-full">
-          Se connecter
-        </button>
-        <button className="bg-gray-400 text-white font-bold py-2 px-4 rounded-lg w-full">
-          Sans connection
+
+        <div className="flex items-center justify-center gap-2 w-full">
+          <button className="bg-indigo-500 text-white font-bold py-3 px-4 rounded-full flex-1 hover:bg-indigo-600 transition">
+            Se connecter
+          </button>
+          <span className="text-black font-medium">OU</span>
+          <button className="bg-gray-400 text-white font-bold py-3 px-4 rounded-full hover:bg-gray-500 transition">
+            Sans connection
+          </button>
+        </div>
+
+        <button className="bg-indigo-500 text-white font-bold py-3 px-4 rounded-full w-full hover:bg-indigo-600 transition">
+          Télécharger mes résultats
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
-export default App
+export default App;
+
