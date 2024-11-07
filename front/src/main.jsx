@@ -9,6 +9,6 @@ import Formulaire from './Formulaire/Formulaire.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Header />
-    {/* <App /> */}
+    <App />
   </StrictMode>,
 )

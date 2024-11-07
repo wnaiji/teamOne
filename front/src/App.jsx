@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -8,18 +6,26 @@ function App() {
 
   return (
     <>
-      <div class="d-flex h-5/6 w-full z-20">
-        <h1 class="text-black">TITRE</h1>
+      <div class="flex w-full z-20 h-screen">
+        <h1 class="text-black m-auto">TITRE</h1>
       </div>
-      <div class="class d-flex h-screen w-full">
-        <ul>
-          <li>
-            <div class="d-flex h-1/2 w-full bg-green-800"></div>
+      <div class="h-screen w-screen">
+        <ul class="flex text-black justify-evenly h-3/6 w-full border-radus">
+          <li class="w-2/5 h-2/5 bg-green-500"><button type="button">OPT1</button></li>
+          <li class="w-2/5 h-2/5 bg-green-500"><button type="button">OPT2</button></li>
+        </ul>
+      </div>
+      <div class="h-screen w-screen">
+        <ul class="flex text-black justify-evenly h-3/6 w-full">
+          <li class="w-2/5 h-2/5 bg-green-500">
+            <a href="/map">
+              <button type="button">Age</button>
+            </a>
           </li>
-          <li>
-            <div class="d-flex h-1/2 w-full bg-green-800">
-              <button></button>
-            </div>
+          <li class="w-2/5 h-2/5 bg-green-500">
+            <a href="/login">
+              <button type="button">Login</button>
+            </a>
           </li>
         </ul>
       </div>
