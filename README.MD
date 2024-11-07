@@ -3,6 +3,7 @@
 Bienvenue sur Nom du Projet ! Ce projet est composé d'un frontend et d'un backend, tous deux containerisés à l'aide de Docker et orchestrés avec Docker Compose. Le frontend est une application React servie par Nginx, tandis que le backend est un serveur Node.js utilisant SQLite3 pour le stockage des données.
 
 # Structure du Projet
+```
 project-root/
 │
 ├── docker-compose.yml        # Orchestration des services Docker
@@ -16,7 +17,7 @@ project-root/
 	├── Dockerfile            # Dockerfile pour construire le backend
 	├── package.json          # Dépendances du backend
 	├── ... autres fichiers
-
+```
 # Technologies Utilisées
 - Frontend : React, servi avec Nginx
 - Backend : Node.js (Express), SQLite3 pour la persistance des données
