@@ -1,13 +1,18 @@
+import './App.css'
+import './index.css'
+import App from './App.jsx'
+import Header from './layout/Header.jsx'
+import Formulaire from './Formulaire/Formulaire.jsx'
+import ContactPage from './Components/Contact.jsx'
+import Homepage from './Components/Homepage.jsx'
+import Storypage from './Components/Quizzpage.jsx'
 
-// {/* <Routes>
-// {/* <Route path="/" element={<Fonction />} /> */}
-// <Route path="/admin-dashboard" element={<AdminDashboard/>}/>
-// <Route path="/recruiter"element={<JobAdForm/>}/>
-// <Route path="/app-user"element={<AppUserPage/>}/>
-// <Route path="/" element={<HomePage/>}/>
-// <Route path="/login"element={<LoginPage />}/>
-// <Route path="/jobadvert" element={<JobAdvert/>}/>
-// <Route path="/jobadvertuser" element={<JobAdvertUser/>}/>
-// <Route path="/profile" element={<Profile/>}/>
-// <Route path="/wizard" element={<Wizard/>}/>
-// </Routes> */}
+
+<Routes>
+    <Route path="/" element={<App/>}/>
+    <Route path="./Components/homepage" element={<Homepage/>}/>
+    <Route path="./layout/header" element={<Header/>}/>
+    <Route path="./Components/quizpage" element={<Storypage/>}/>
+    <Route path="./Formulaire/formulaire." element={<Formulaire/>}/>
+    <Route path="./Components/contact" element={<ContactPage/>}/>
+</Routes>
