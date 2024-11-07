@@ -61,7 +61,7 @@ export default function Header() {
   );
   return (
     <header>
-        <nav className='container-header flex justify-between w-full'>
+        <nav className='container-header flex justify-between w-full z-50'>
             <a href='/' className='cursor-pointer w-1/7 logo-header '>
             <img src={logo} alt="code4sud logo" className='w-full self-start ' />
             </a>
