@@ -82,32 +82,6 @@ const Storypage = ({ userInfo }) => {
             </ul>
         </div>
       )}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {storyStep === 1 && (
         <div className="story-step-1 flex flex-col items-center w-screen">
           <div class="w-screen flex h-full  justify-center mb-24">
@@ -124,7 +98,7 @@ const Storypage = ({ userInfo }) => {
 
       {storyStep === 2 && (
         <div className="story-step-2 flex flex-col items-center w-screen">
-          <img src={questionImages[2]} alt="Image for question 3" className="mb-4 w-80 h-60 object-cover rounded" />
+          <img src={questionImages[2]} alt="Image for question 3" className="mb-24 w-80 h-60 object-cover rounded" />
           <h2 className="text-2xl">Comment les mouvements de terrain peuvent-ils affecter les infrastructures ?</h2>
           <ul>
             <li><button className="btn mt-3 text-white" onClick={() => handleChoice('solution1')}>Ils favorisent la croissance des plantes.</button></li>
@@ -136,7 +110,7 @@ const Storypage = ({ userInfo }) => {
 
       {storyStep === 3 && (
         <div className="story-step-3 flex flex-col items-center w-screen">
-          <img src={questionImages[3]} alt="Image for question 4" className="mb-4 w-80 h-60 object-cover rounded" />
+          <img src={questionImages[3]} alt="Image for question 4" className="mb-24 w-80 h-60 object-cover rounded" />
           <h2 className="text-2xl">Quel signe peut montrer qu'un mouvement de terrain va se produire bientôt ?</h2>
           <ul>
             <li><button className="btn mt-3 text-white" onClick={() => handleChoice('solution1')}>L'apparition de fissures dans le sol ou dans les fondations.</button></li>
@@ -148,7 +122,7 @@ const Storypage = ({ userInfo }) => {
 
       {storyStep === 4 && (
         <div className="story-step-4 flex flex-col items-center w-screen">
-          <img src={questionImages[4]} alt="Image for question 5" className="mb-4 w-80 h-60 object-cover rounded" />
+          <img src={questionImages[4]} alt="Image for question 5" className="mb-24 w-80 h-60 object-cover rounded" />
           <h2 className="text-2xl">Quelle mesure peut aider à prévenir les glissements de terrain ?</h2>
           <ul>
             <li><button className="btn mt-3 text-white" onClick={() => handleChoice('solution1')}>Augmenter le trafic dans la zone.</button></li>
@@ -160,7 +134,7 @@ const Storypage = ({ userInfo }) => {
 
       {storyStep === 5 && (
         <div className="story-step-5 flex flex-col items-center w-screen">
-          <img src={questionImages[5]} alt="Image for question 6" className="mb-4 w-80 h-60 object-cover rounded" />
+          <img src={questionImages[5]} alt="Image for question 6" className="mb-24 w-80 h-60 object-cover rounded" />
           <h2 className="text-2xl">Quelles régions sont les plus vulnérables aux mouvements de terrain ?</h2>
           <ul>
             <li><button className="btn mt-3 text-white" onClick={() => handleChoice('solution1')}>Les zones complètement plates sans relief.</button></li>
