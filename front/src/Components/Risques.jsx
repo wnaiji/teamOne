@@ -39,7 +39,7 @@ const RisksPage = () => {
 
   }, [risques]);
   return (
-    <div className="mt-20 fixed inset-0 flex flex-col items-center bg-gray-100">
+    <div className="mt-20 h-screen w-screen inset-0 flex flex-col items-center bg-white">
       {/* Transparent Rectangle with Rounded Borders */}
       <div className="bg-black/20 backdrop-blur-md w-full max-w-4xl h-20 rounded-b-lg shadow-lg flex items-center justify-center mb-8 mt-8">
         <h1 className="text-4xl font-semibold text-indigo-600">Coordonnées</h1>
