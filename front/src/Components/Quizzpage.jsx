@@ -13,10 +13,10 @@ const Storypage = ({ userInfo }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white p-8 text-gray-800 flex flex-col items-center">
+    <div className="min-h-screen bg-white p-8 text-gray-800 flex flex-col items-center w-screen h-screen">
       {storyStep === 0 && (
         <div className="story-step-0">
-          <h2 className="text-2xl">Imaginez qu'il y a un {userInfo.riskType} dans votre région, {userInfo.location}.</h2>
+          {/* <h2 className="text-2xl">Imaginez qu'il y a un {userInfo.riskType} dans votre région, {userInfo.location}.</h2> */}
           <p className="mt-4">Que faites-vous en premier?</p>
           <button className="btn mt-2" onClick={() => handleChoice('solution1')}>Option 1</button>
           <button className="btn mt-2 ml-2" onClick={() => handleChoice('solution2')}>Option 2</button>

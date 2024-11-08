@@ -3,9 +3,11 @@ import viteLogo from '/vite.svg'
 import { MapContainer, TileLayer, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
+import { useRisques } from './RisKContextes';
 
 function ClickableMap() {
     console.log('clickMap');
+    const { setRisques } = useRisques();
     useMapEvents({
         click: async (e) => {
             const { lat, lng } = e.latlng;
@@ -15,6 +17,10 @@ function ClickableMap() {
                 try {
                     console.log('Response:', formData);
                     const response = await axios.post('http://localhost:3000/map', formData);
+                    console.log('Risques récupérés :', response.data.risques);
+
+                    localStorage.setItem('risques', JSON.stringify(response.data.risques));
+                    setRisques(response.data.risques);
                 } catch (error) {
                     console.error('Erreur lors de l\'envoi:', error);
                 }
@@ -22,6 +28,19 @@ function ClickableMap() {
     });
     return null;
 }
+
+// function MapWithRisques({ risques }) {
+//     return (
+//         <div>
+//             <h2>Risques récupérés:</h2>
+//             <ul>
+//                 {risques.map((risque, index) => (
+//                     <li key={index}>{risque}</li>
+//                 ))}
+//             </ul>
+//         </div>
+//     );
+// }
 
 function Map_Leaflet() {
     return (

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { useRisques } from './RisKContextes';
 
 const dataCards = [
   { id: 1, title: "Server Status", content: "All servers running smoothly." },
@@ -6,7 +8,9 @@ const dataCards = [
   { id: 3, title: "Incident Reports", content: "No incidents reported." },
 ];
 
-const MainContent = () => {
+const RisquePage = () => {
+  const { risques } = useRisques();
+  console.log(risques);
   return (
     <main className="p-6 bg-lightPurple flex-1">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -21,4 +25,4 @@ const MainContent = () => {
   );
 };
 
-export default MainContent;
+export default RisquePage;

@@ -6,6 +6,8 @@ import App from './App.jsx';
 import Header from './layout/Header.jsx';
 import ContactPage from './Components/Contact.jsx';
 import Storypage from './Components/Quizzpage.jsx';
+import RisquePage from './Components/Risques.jsx';
+import { RisquesProvider } from './Components/RisKContextes.jsx';
 
 function Routes_link() {
   return (
@@ -13,6 +15,7 @@ function Routes_link() {
         <Route path="/" element={<App />}/>
         <Route path="/quizz" element={<Storypage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/risque" element={<RisquePage />} />
       </Routes>
   );
 }
@@ -20,9 +23,11 @@ function Routes_link() {
 createRoot(document.getElementById('root')).render(
 
   <StrictMode>
-    <BrowserRouter>
-    <Header />
-    <Routes_link />
-    </BrowserRouter>
+    <RisquesProvider>
+        <BrowserRouter>
+        <Header />
+        <Routes_link />
+        </BrowserRouter>
+    </RisquesProvider>
   </StrictMode>
 );

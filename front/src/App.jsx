@@ -4,6 +4,8 @@ import './App.css';
 import { Link } from 'react-router-dom';
 import  Map_Leaflet from './Components/Map_Leaflet.jsx';
 
+// import RisksResponses from './Components/RisksResponses.jsx';
+
 
 
 function App() {
@@ -99,6 +101,9 @@ function App() {
       <div className="w-2/4 h-2/4">
         <Map_Leaflet />
       </div>
+      {/* <div className="w-2/4 h-2/4">
+        <RisksResponses />
+      </div> */}
     </div>
   );
 }
