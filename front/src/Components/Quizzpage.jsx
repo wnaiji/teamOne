@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
+import question1 from '../assets/question1.png';
+import question2 from '../assets/question2.png';
+import question3 from '../assets/question3.png';
+import question4 from '../assets/question4.png';
+import question5 from '../assets/question5.png';
+
 
 const Storypage = ({ userInfo }) => {
   const [storyStep, setStoryStep] = useState(0);
@@ -18,12 +24,12 @@ const Storypage = ({ userInfo }) => {
   };
 
   const questionImages = [
-    './public/question1.png', // Image for question 1
-    './public/question2.png', // Image for question 2
-    './public/question3.png', // Image for question 3
-    './public/question4.png', // Image for question 4
-    './public/question5.png', // Image for question 5
-    './public/question6.png', // Image for question 6
+    './assets/question1.png', // Image for question 1
+    './assets/question2.png', // Image for question 2
+    './assets/question3.png', // Image for question 3
+    './assets/question4.png', // Image for question 4
+    './assets/question5.png', // Image for question 5
+    './assets/question6.png', // Image for question 6
   ];
 
   const handleChoice = (choice) => {
@@ -72,7 +78,7 @@ const Storypage = ({ userInfo }) => {
       {storyStep === 0 && (
         <div className="story-step-0 flex flex-col items-center w-screen">
             <div class="w-screen flex h-full  justify-center mb-24">
-              <img src={questionImages[0]} alt="Image for question 1" className="mb-24 w-96 h-96  object-cover rounded justify-self-center" />
+              <img src={question1} alt="Image for question 1" className="mb-24 w-96 h-96  object-cover rounded justify-self-center" />
             </div>
             <h2 className="text-2xl text-black">Qu'est-ce qu'un glissement de terrain ?</h2>
             <ul>
@@ -85,7 +91,7 @@ const Storypage = ({ userInfo }) => {
       {storyStep === 1 && (
         <div className="story-step-1 flex flex-col items-center w-screen">
           <div class="w-screen flex h-full  justify-center mb-24">
-            <img src={questionImages[1]} alt="Image for question 2" className="mb-24 w-80 h-60 object-cover rounded" />
+            <img src={question2} alt="Image for question 2" className="mb-24 w-80 h-60 object-cover rounded" />
           </div>
           <h2 className="text-2xl">Quel est l'un des principaux facteurs qui cause les mouvements de terrain ?</h2>
           <ul>
@@ -98,7 +104,7 @@ const Storypage = ({ userInfo }) => {
 
       {storyStep === 2 && (
         <div className="story-step-2 flex flex-col items-center w-screen">
-          <img src={questionImages[2]} alt="Image for question 3" className="mb-24 w-80 h-60 object-cover rounded" />
+          <img src={question3} alt="Image for question 3" className="mb-24 w-80 h-60 object-cover rounded" />
           <h2 className="text-2xl">Comment les mouvements de terrain peuvent-ils affecter les infrastructures ?</h2>
           <ul>
             <li><button className="btn mt-3 text-white" onClick={() => handleChoice('solution1')}>Ils favorisent la croissance des plantes.</button></li>
@@ -110,7 +116,7 @@ const Storypage = ({ userInfo }) => {
 
       {storyStep === 3 && (
         <div className="story-step-3 flex flex-col items-center w-screen">
-          <img src={questionImages[3]} alt="Image for question 4" className="mb-24 w-80 h-60 object-cover rounded" />
+          <img src={question4} alt="Image for question 4" className="mb-24 w-80 h-60 object-cover rounded" />
           <h2 className="text-2xl">Quel signe peut montrer qu'un mouvement de terrain va se produire bientôt ?</h2>
           <ul>
             <li><button className="btn mt-3 text-white" onClick={() => handleChoice('solution1')}>L'apparition de fissures dans le sol ou dans les fondations.</button></li>
@@ -122,7 +128,7 @@ const Storypage = ({ userInfo }) => {
 
       {storyStep === 4 && (
         <div className="story-step-4 flex flex-col items-center w-screen">
-          <img src={questionImages[4]} alt="Image for question 5" className="mb-24 w-80 h-60 object-cover rounded" />
+          <img src={question5} alt="Image for question 5" className="mb-24 w-80 h-60 object-cover rounded" />
           <h2 className="text-2xl">Quelle mesure peut aider à prévenir les glissements de terrain ?</h2>
           <ul>
             <li><button className="btn mt-3 text-white" onClick={() => handleChoice('solution1')}>Augmenter le trafic dans la zone.</button></li>
@@ -134,7 +140,7 @@ const Storypage = ({ userInfo }) => {
 
       {storyStep === 5 && (
         <div className="story-step-5 flex flex-col items-center w-screen">
-          <img src={questionImages[5]} alt="Image for question 6" className="mb-24 w-80 h-60 object-cover rounded" />
+          <img src={question6} alt="Image for question 6" className="mb-24 w-80 h-60 object-cover rounded" />
           <h2 className="text-2xl">Quelles régions sont les plus vulnérables aux mouvements de terrain ?</h2>
           <ul>
             <li><button className="btn mt-3 text-white" onClick={() => handleChoice('solution1')}>Les zones complètement plates sans relief.</button></li>
